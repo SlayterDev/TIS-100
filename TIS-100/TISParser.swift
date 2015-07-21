@@ -41,29 +41,37 @@ class TISParser: Parser {
 			case "SAV":
 				tokens.append(.Sav)
 			case "ADD":
+                self.consumeWhitespace()
 				let src = parseToken()
 				tokens.append(.Add(src))
 			case "SUB":
+                self.consumeWhitespace()
 				let src = parseToken()
 				tokens.append(.Sub(src))
 			case "NEG":
 				tokens.append(.Neg)
 			case "JMP":
+                self.consumeWhitespace()
 				let label = parseToken()
 				tokens.append(.Jmp(label))
 			case "JEZ":
+                self.consumeWhitespace()
 				let label = parseToken()
 				tokens.append(.Jez(label))
 			case "JNZ":
+                self.consumeWhitespace()
 				let label = parseToken()
 				tokens.append(.Jnz(label))
 			case "JGZ":
+                self.consumeWhitespace()
 				let label = parseToken()
 				tokens.append(.Jgz(label))
 			case "JLZ":
+                self.consumeWhitespace()
 				let label = parseToken()
 				tokens.append(.Jlz(label))
 			case "JRO":
+                self.consumeWhitespace()
 				let label = parseToken()
 				tokens.append(.Jro(label))
 			default:

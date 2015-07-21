@@ -18,6 +18,9 @@
 		022A2FC61B5E942D0010FB6A /* InstructionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A2FC51B5E942D0010FB6A /* InstructionSet.swift */; };
 		022A2FCC1B5EA2890010FB6A /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A2FCB1B5EA2890010FB6A /* Parser.swift */; };
 		022A2FCE1B5EA2F00010FB6A /* TISParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A2FCD1B5EA2F00010FB6A /* TISParser.swift */; };
+		0254BFA41B5ED88C00D84558 /* NodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BFA31B5ED88C00D84558 /* NodeView.swift */; };
+		0254BFA61B5EDF1800D84558 /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BFA51B5EDF1800D84558 /* InsetLabel.swift */; };
+		0254BFA81B5EE22700D84558 /* NodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254BFA71B5EE22700D84558 /* NodeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		022A2FC51B5E942D0010FB6A /* InstructionSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionSet.swift; sourceTree = "<group>"; };
 		022A2FCB1B5EA2890010FB6A /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		022A2FCD1B5EA2F00010FB6A /* TISParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TISParser.swift; sourceTree = "<group>"; };
+		0254BFA31B5ED88C00D84558 /* NodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeView.swift; sourceTree = "<group>"; };
+		0254BFA51B5EDF1800D84558 /* InsetLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
+		0254BFA71B5EE22700D84558 /* NodeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 				022A2F9B1B5E923F0010FB6A /* Assets.xcassets */,
 				022A2F9D1B5E923F0010FB6A /* LaunchScreen.storyboard */,
 				022A2FA01B5E923F0010FB6A /* Info.plist */,
+				0254BFA51B5EDF1800D84558 /* InsetLabel.swift */,
 			);
 			path = "TIS-100";
 			sourceTree = "<group>";
@@ -141,6 +148,8 @@
 				022A2FCD1B5EA2F00010FB6A /* TISParser.swift */,
 				022A2FC31B5E92E90010FB6A /* BasicNode.swift */,
 				022A2FC51B5E942D0010FB6A /* InstructionSet.swift */,
+				0254BFA31B5ED88C00D84558 /* NodeView.swift */,
+				0254BFA71B5EE22700D84558 /* NodeManager.swift */,
 			);
 			name = Emulator;
 			sourceTree = "<group>";
@@ -279,7 +288,10 @@
 				022A2FC61B5E942D0010FB6A /* InstructionSet.swift in Sources */,
 				022A2FCC1B5EA2890010FB6A /* Parser.swift in Sources */,
 				022A2FCE1B5EA2F00010FB6A /* TISParser.swift in Sources */,
+				0254BFA81B5EE22700D84558 /* NodeManager.swift in Sources */,
 				022A2F951B5E923F0010FB6A /* AppDelegate.swift in Sources */,
+				0254BFA41B5ED88C00D84558 /* NodeView.swift in Sources */,
+				0254BFA61B5EDF1800D84558 /* InsetLabel.swift in Sources */,
 				022A2FC41B5E92E90010FB6A /* BasicNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +519,7 @@
 				022A2FBB1B5E923F0010FB6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		022A2FBC1B5E923F0010FB6A /* Build configuration list for PBXNativeTarget "TIS-100Tests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +528,7 @@
 				022A2FBE1B5E923F0010FB6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		022A2FBF1B5E923F0010FB6A /* Build configuration list for PBXNativeTarget "TIS-100UITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +537,7 @@
 				022A2FC11B5E923F0010FB6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="CourierNewBold.ttf">
-            <string>CourierNewPS-BoldMT</string>
-            <string>CourierNewPS-BoldMT</string>
-            <string>CourierNewPS-BoldMT</string>
-            <string>CourierNewPS-BoldMT</string>
-        </mutableArray>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -25,68 +15,8 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="MOV 5, ACC" translatesAutoresizingMaskIntoConstraints="NO" id="061-c1-upL">
-                                <rect key="frame" x="180" y="168" width="240" height="264"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="264" id="OId-lk-XqO"/>
-                                    <constraint firstAttribute="width" constant="240" id="ftp-Fx-S9z"/>
-                                </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ACC: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ve8-ZX-gRY">
-                                <rect key="frame" x="180" y="139" width="120" height="21"/>
-                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="BAK:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDb-KU-vjd">
-                                <rect key="frame" x="308" y="139" width="112" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="112" id="Yqz-fM-jsY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtT-SW-F4z">
-                                <rect key="frame" x="437" y="28" width="143" height="46"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="143" id="KAr-Y3-Izc"/>
-                                    <constraint firstAttribute="height" constant="46" id="itu-QK-XA3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="28"/>
-                                <state key="normal" title="RUN">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="runProgram:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jE4-1V-esE"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="061-c1-upL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6by-Zt-Hu3"/>
-                            <constraint firstItem="Ve8-ZX-gRY" firstAttribute="baseline" secondItem="GDb-KU-vjd" secondAttribute="baseline" id="CXe-WG-7uf"/>
-                            <constraint firstItem="061-c1-upL" firstAttribute="top" secondItem="Ve8-ZX-gRY" secondAttribute="bottom" constant="8" symbolic="YES" id="Eva-Hd-tuC"/>
-                            <constraint firstItem="VtT-SW-F4z" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="HBx-SA-BxO"/>
-                            <constraint firstItem="VtT-SW-F4z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="V3G-tT-kIr"/>
-                            <constraint firstItem="061-c1-upL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YQO-Ib-Xac"/>
-                            <constraint firstItem="GDb-KU-vjd" firstAttribute="trailing" secondItem="061-c1-upL" secondAttribute="trailing" id="iAH-ui-N50"/>
-                            <constraint firstItem="GDb-KU-vjd" firstAttribute="firstBaseline" secondItem="Ve8-ZX-gRY" secondAttribute="firstBaseline" id="lb2-KA-6eT"/>
-                            <constraint firstItem="Ve8-ZX-gRY" firstAttribute="leading" secondItem="061-c1-upL" secondAttribute="leading" id="tXg-v3-ZBC"/>
-                            <constraint firstItem="GDb-KU-vjd" firstAttribute="leading" secondItem="Ve8-ZX-gRY" secondAttribute="trailing" constant="8" symbolic="YES" id="zbl-nP-kiV"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="accLbl" destination="Ve8-ZX-gRY" id="4Ug-nz-Yqi"/>
-                        <outlet property="bakLbl" destination="GDb-KU-vjd" id="uSk-aA-2UD"/>
-                        <outlet property="sourceView" destination="061-c1-upL" id="TLO-gL-AVD"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

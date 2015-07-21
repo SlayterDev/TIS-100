@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol BasicNodeDelegate {
+    func didUpdateRegisters()
+}
+
 class BasicNode: NSObject {
 	var ACC: Int
 	var BAK: Int
@@ -19,6 +23,8 @@ class BasicNode: NSObject {
 	var lables: NSMutableDictionary
 	
 	var nodeId: Int
+    
+    var delegate: BasicNodeDelegate?
 	
 	let regNames = ["UP", "RIGHT", "DOWN", "LEFT", "ACC", "BAK", "NIL"]
 	
@@ -150,11 +156,18 @@ class BasicNode: NSObject {
 		idleLvl = 0.0
 		ports = [Int?](count: 4, repeatedValue: nil)
 	}
+    
+    func updateUI() {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.delegate?.didUpdateRegisters()
+        })
+    }
 	
 	func runProgram(instructions: [InstructionSet]) {
 		clearCPU()
 		for ip = 0; ip < instructions.count; ip++ {
 			executeInstruction(instructions[ip])
+            updateUI()
 		}
 	}
 	

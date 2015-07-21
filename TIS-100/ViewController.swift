@@ -15,23 +15,33 @@ class ViewController: UIViewController, UITextViewDelegate {
 	@IBOutlet var bakLbl: UILabel!
 	
 	let node = BasicNode(withId: 0)
+    
+    var manager: NodeManager?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
-		sourceView.layer.borderWidth = 10
-		sourceView.layer.borderColor = UIColor.whiteColor().CGColor
-		sourceView.textContainerInset = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
-		sourceView.delegate = self
+        let runButton = UIButton(frame: CGRectMake(10, 15, 100, 25))
+        runButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        runButton.backgroundColor = UIColor.whiteColor()
+        runButton.titleLabel?.font = UIFont(name: "CourierNewPS-BoldMT", size: 15.0)
+        runButton.setTitle("RUN", forState: .Normal)
+        runButton.addTarget(self, action: "runProgram:", forControlEvents: .TouchUpInside)
+        self.view.addSubview(runButton)
+        
+		let nv = NodeView(frame: CGRectMake(50, 50, 250, 280), nodeId: 0)
+        let nv1 = NodeView(frame: CGRectMake(nv.frame.origin.x + 325, 50, 250, 280), nodeId: 1)
+        let nv2 = NodeView(frame: CGRectMake(nv1.frame.origin.x + 325, 50, 250, 280), nodeId: 2)
+        self.view.addSubview(nv)
+        self.view.addSubview(nv1)
+        self.view.addSubview(nv2)
 		
+        manager = NodeManager(nodes: [nv, nv1, nv2])
 	}
 	
 	@IBAction func runProgram(sender: AnyObject) {
-		let parser = TISParser()
-		node.runProgram(parser.parse(sourceView.text))
-		self.accLbl.text = "ACC: " + String(node.ACC)
-		self.bakLbl.text = "BAK: " + String(node.BAK)
+		manager?.execute()
 	}
 
 	override func didReceiveMemoryWarning() {
