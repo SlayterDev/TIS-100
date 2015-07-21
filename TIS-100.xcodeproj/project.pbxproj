@@ -14,6 +14,10 @@
 		022A2F9F1B5E923F0010FB6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 022A2F9D1B5E923F0010FB6A /* LaunchScreen.storyboard */; };
 		022A2FAA1B5E923F0010FB6A /* TIS_100Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A2FA91B5E923F0010FB6A /* TIS_100Tests.swift */; };
 		022A2FB51B5E923F0010FB6A /* TIS_100UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A2FB41B5E923F0010FB6A /* TIS_100UITests.swift */; };
+		022A2FC41B5E92E90010FB6A /* BasicNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A2FC31B5E92E90010FB6A /* BasicNode.swift */; };
+		022A2FC61B5E942D0010FB6A /* InstructionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A2FC51B5E942D0010FB6A /* InstructionSet.swift */; };
+		022A2FCC1B5EA2890010FB6A /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A2FCB1B5EA2890010FB6A /* Parser.swift */; };
+		022A2FCE1B5EA2F00010FB6A /* TISParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A2FCD1B5EA2F00010FB6A /* TISParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		022A2FB01B5E923F0010FB6A /* TIS-100UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TIS-100UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		022A2FB41B5E923F0010FB6A /* TIS_100UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TIS_100UITests.swift; sourceTree = "<group>"; };
 		022A2FB61B5E923F0010FB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		022A2FC31B5E92E90010FB6A /* BasicNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicNode.swift; sourceTree = "<group>"; };
+		022A2FC51B5E942D0010FB6A /* InstructionSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionSet.swift; sourceTree = "<group>"; };
+		022A2FCB1B5EA2890010FB6A /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		022A2FCD1B5EA2F00010FB6A /* TISParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TISParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,7 @@
 		022A2F931B5E923F0010FB6A /* TIS-100 */ = {
 			isa = PBXGroup;
 			children = (
+				022A2FC21B5E92490010FB6A /* Emulator */,
 				022A2F941B5E923F0010FB6A /* AppDelegate.swift */,
 				022A2F961B5E923F0010FB6A /* ViewController.swift */,
 				022A2F981B5E923F0010FB6A /* Main.storyboard */,
@@ -123,6 +132,17 @@
 				022A2FB61B5E923F0010FB6A /* Info.plist */,
 			);
 			path = "TIS-100UITests";
+			sourceTree = "<group>";
+		};
+		022A2FC21B5E92490010FB6A /* Emulator */ = {
+			isa = PBXGroup;
+			children = (
+				022A2FCB1B5EA2890010FB6A /* Parser.swift */,
+				022A2FCD1B5EA2F00010FB6A /* TISParser.swift */,
+				022A2FC31B5E92E90010FB6A /* BasicNode.swift */,
+				022A2FC51B5E942D0010FB6A /* InstructionSet.swift */,
+			);
+			name = Emulator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +276,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				022A2F971B5E923F0010FB6A /* ViewController.swift in Sources */,
+				022A2FC61B5E942D0010FB6A /* InstructionSet.swift in Sources */,
+				022A2FCC1B5EA2890010FB6A /* Parser.swift in Sources */,
+				022A2FCE1B5EA2F00010FB6A /* TISParser.swift in Sources */,
 				022A2F951B5E923F0010FB6A /* AppDelegate.swift in Sources */,
+				022A2FC41B5E92E90010FB6A /* BasicNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
