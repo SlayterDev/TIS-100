@@ -25,10 +25,11 @@ class BasicNode: NSObject {
 	var nodeId: Int
     
     var delegate: BasicNodeDelegate?
+	var manager: NodeManager
 	
 	let regNames = ["UP", "RIGHT", "DOWN", "LEFT", "ACC", "BAK", "NIL"]
 	
-	init(withId id: Int) {
+	init(withId id: Int, manager: NodeManager) {
 		self.nodeId = id
 		self.ACC = 0
 		self.BAK = 0
@@ -36,18 +37,32 @@ class BasicNode: NSObject {
 		self.ip = 0
 		self.ports = [Int?](count: 4, repeatedValue: nil)
 		self.lables = NSMutableDictionary()
+		self.manager = manager
 	}
 	
 	func getPortVal(port: String) -> Int {
 		// TODO: Blocking/Removing value from port
 		let idx = regNames.indexOf(port)
-		return ports[idx!]!
+		
+		while true {
+			if let recvVal = self.manager.readFromPort(self, dest: idx!) {
+				ports[idx!] = recvVal
+				break
+			}
+		}
+		
+		let retVal = ports[idx!]!
+		ports[idx!] = nil
+		return retVal
 	}
 	
 	func writeToPort(port: String, val: Int) {
 		// TODO: Blocking
-		let idx = regNames.indexOf(port)
-		ports[idx!]! = val
+		let idx = regNames.indexOf(port)!
+		ports[idx] = val
+		
+		self.manager.writeToPort(self, dest: idx)
+		while ports[idx] != nil { }
 	}
 	
 	func executeInstruction(inst: InstructionSet) {

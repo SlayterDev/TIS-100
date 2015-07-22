@@ -16,7 +16,7 @@ class NodeView: UIView, UITextViewDelegate, BasicNodeDelegate {
     
     let node: BasicNode
     
-    init(frame: CGRect, nodeId: Int) {
+	init(frame: CGRect, nodeId: Int, manager: NodeManager) {
         self.sourceView = UITextView(frame: CGRectMake(0, 0, frame.width - 75, frame.height - 20 + 1.5))
         self.sourceView.autocapitalizationType = .AllCharacters
         self.sourceView.font = UIFont(name: "CourierNewPS-BoldMT", size: 18.0)
@@ -55,8 +55,8 @@ class NodeView: UIView, UITextViewDelegate, BasicNodeDelegate {
         self.idleLbl.layer.borderColor = UIColor.whiteColor().CGColor
         self.idleLbl.layer.borderWidth = 10.0
         
-        self.node = BasicNode(withId: nodeId)
-        
+		self.node = BasicNode(withId: nodeId, manager: manager)
+		
         super.init(frame: frame)
         
         self.addSubview(self.sourceView)

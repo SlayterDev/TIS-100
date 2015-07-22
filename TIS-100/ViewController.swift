@@ -13,8 +13,8 @@ class ViewController: UIViewController, UITextViewDelegate {
 	@IBOutlet var sourceView: UITextView!
 	@IBOutlet var accLbl: UILabel!
 	@IBOutlet var bakLbl: UILabel!
-	
-	let node = BasicNode(withId: 0)
+
+	var nodes: [NodeView]?
     
     var manager: NodeManager?
 	
@@ -29,19 +29,20 @@ class ViewController: UIViewController, UITextViewDelegate {
         runButton.setTitle("RUN", forState: .Normal)
         runButton.addTarget(self, action: "runProgram:", forControlEvents: .TouchUpInside)
         self.view.addSubview(runButton)
-        
-		let nv = NodeView(frame: CGRectMake(50, 50, 250, 280), nodeId: 0)
-        let nv1 = NodeView(frame: CGRectMake(nv.frame.origin.x + 325, 50, 250, 280), nodeId: 1)
-        let nv2 = NodeView(frame: CGRectMake(nv1.frame.origin.x + 325, 50, 250, 280), nodeId: 2)
+		
+		manager = NodeManager()
+		
+		let nv = NodeView(frame: CGRectMake(50, 50, 250, 280), nodeId: 0, manager: manager!)
+        let nv1 = NodeView(frame: CGRectMake(nv.frame.origin.x + 325, 50, 250, 280), nodeId: 1, manager: manager!)
+        let nv2 = NodeView(frame: CGRectMake(nv1.frame.origin.x + 325, 50, 250, 280), nodeId: 2, manager: manager!)
         self.view.addSubview(nv)
         self.view.addSubview(nv1)
         self.view.addSubview(nv2)
-		
-        manager = NodeManager(nodes: [nv, nv1, nv2])
+		self.nodes = [nv, nv1, nv2]
 	}
 	
 	@IBAction func runProgram(sender: AnyObject) {
-		manager?.execute()
+		manager?.execute(self.nodes!)
 	}
 
 	override func didReceiveMemoryWarning() {
