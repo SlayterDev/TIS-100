@@ -19,7 +19,7 @@ class NodeView: UIView, UITextViewDelegate, BasicNodeDelegate {
 	init(frame: CGRect, nodeId: Int, manager: NodeManager) {
         self.sourceView = UITextView(frame: CGRectMake(0, 0, frame.width - 75, frame.height - 20 + 1.5))
         self.sourceView.autocapitalizationType = .AllCharacters
-        self.sourceView.font = UIFont(name: "CourierNewPS-BoldMT", size: 18.0)
+        self.sourceView.font = UIFont(name: "CourierNewPS-BoldMT", size: 16.0)
         self.sourceView.text = "MOV 5, ACC"
         self.sourceView.backgroundColor = UIColor.blackColor()
         self.sourceView.textColor = UIColor.whiteColor()
@@ -79,9 +79,13 @@ class NodeView: UIView, UITextViewDelegate, BasicNodeDelegate {
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        
-        let nsTextViewText = textView.text as NSString
-        textView.text = nsTextViewText.stringByReplacingCharactersInRange(range, withString: text.uppercaseString) as String
+		
+		let beg = textView.beginningOfDocument
+		let start = textView.positionFromPosition(beg, offset: range.location)
+		let end = textView.positionFromPosition(start!, offset: range.length)
+		let textRange = textView.textRangeFromPosition(start!, toPosition: end!)
+		
+		textView.replaceRange(textRange!, withText: text.uppercaseString)
         
         return false
     }
