@@ -170,6 +170,7 @@ class BasicNode: NSObject {
 		BAK = 0
 		idleLvl = 0.0
 		ports = [Int?](count: 4, repeatedValue: nil)
+		self.lables = NSMutableDictionary()
 	}
     
     func updateUI() {
@@ -180,6 +181,16 @@ class BasicNode: NSObject {
 	
 	func runProgram(instructions: [InstructionSet]) {
 		clearCPU()
+		
+		for var i = 0; i < instructions.count; i++ {
+			switch instructions[i] {
+			case .Label(let str):
+				self.lables.setValue(i, forKey: str)
+			default:
+				break
+			}
+		}
+		
 		for ip = 0; ip < instructions.count; ip++ {
 			executeInstruction(instructions[ip])
             updateUI()
